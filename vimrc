@@ -102,3 +102,16 @@ set wildignore+=*.png,*.jpg,*.gif
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
+
+"""" CJ's ADDONS """"
+
+" Makes it load with nerd on the left and focused in on right window
+let g:NERDTreeHijackNetrw = 0
+let g:loaded_netrw       = 1 " Disable netrw
+let g:loaded_netrwPlugin = 1 " Disable netrw
+au VimEnter * :NERDTreeToggle
+au VimEnter * :wincmd p
+
+"" Yankring settings
+let g:yankring_history_file = '.yankring-history'
+let g:yankring_replace_n_pkey = "'"
