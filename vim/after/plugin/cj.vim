@@ -1,6 +1,8 @@
 """" PLEASE READ """"
 """""""""""""""""""""
 
+" COMMENT OUT THE LAST LINE OF PLUGIN/SETTINGS/SOLARIZED.VIM
+
 " ADD THIS TO THE BOTTOM OF THE VIMRC FILE
 
 """" CJ's ADDONS """"
@@ -35,6 +37,9 @@ set fillchars=diff:⣿,vert:│
 set listchars=tab:▸\ ,extends:❯,precedes:❮
 set showbreak=↪
 set wrap
+
+" Find out what syntax color the var is using
+nmap ,v :echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
 
 " Ack for the last search.
 nnoremap <silent> ./ :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
