@@ -146,7 +146,8 @@ nmap <silent> ,<D-R> :call RunLastConqueCommand()<CR>
 
 "" CTRLP Changes
 let g:ctrlp_map = '<c-t>'
-nnoremap <silent> <c-t> :CtrlP $<CR>
+let g:ctrlp_by_filename = 0
+nnoremap <silent> <c-t> :CtrlP<CR>
 nnoremap <C-b> :CloseSingleConque<CR>:CtrlPBuffer<cr>
 nnoremap <C-r> :CtrlPMRU<cr>
 
@@ -166,3 +167,13 @@ nnoremap <leader>H :Gbrowse<cr>
 vnoremap <leader>H :Gbrowse<cr>
 
 nnoremap <C-y> :YRShow<CR>
+
+" CSS and LessCSS {{{
+
+" Source
+vnoremap <leader>S y:execute @@<cr>:echo 'Sourced selection.'<cr>
+nnoremap <leader>S ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
+
+" Make {<cr> insert a pair of brackets in such a way that the cursor is correctly
+" positioned inside of them AND the following code doesn't get unfolded.
+au BufNewFile,BufRead *.less,*.css,*.scss inoremap <buffer> {<cr> {}<left><cr><space><space>.<cr><esc>kA<bs>
