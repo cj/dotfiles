@@ -20,6 +20,9 @@
 
 """""""""""""""""""""
 
+" Use the same shell environment as your terminal
+set shell=bash\ -l
+
 " Ignore case on search
 set ignorecase
 
